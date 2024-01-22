@@ -1,7 +1,42 @@
 body, html {
     height: 100%;
     margin: 0;
+    overflow: hidden; /* This will disable scrolling on the entire page */
 }
+
+#mainContent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden; /* Ensures no scrolling within the main content */
+    z-index: 1;
+}
+
+#backgroundVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Ensures the video stays in the background */
+}
+
+/* Styles for your content that goes over the video */
+.content-overlay {
+    position: relative;
+    z-index: 2;
+    /* Additional styling for your text/content as needed */
+}
+
 
 #loadingScreen {
     position: fixed;
@@ -25,7 +60,13 @@ body, html {
 }
 
 #enterButton {
-    padding: 10px 20px;
+    font-family: 'Luckiest Guy', cursive;
+    text-shadow:
+        -1.5px -1.5px 0 #000,
+        1.5px -1.5px 0 #000,
+        -1.5px 1.5px 0 #000,
+        1.5px 1.5px 0 #000; /* creates an outline effect */
+    padding: 20px 20px;
     background: #F89406; /* Orange background */
     color: white;
     font-size: 20px;
@@ -36,9 +77,10 @@ body, html {
     transform: translate(-50%, -50%);
     z-index: 3;
     border-radius: 5px;
+    border: 2px solid white; /* Adds a 2px solid white border */
 }
 #enterButton:hover {
-    background: #FAA61A; /* Lighter orange on hover */
+    background: #f3ad34; /* Lighter orange on hover */
 }
 
 
