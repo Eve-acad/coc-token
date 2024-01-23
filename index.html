@@ -11,13 +11,13 @@
 
 <body>
 
-    <div id="loadingScreen">
+    <!-- <div id="loadingScreen">
         <video id="loadingVideo" playsinline muted>
             <source src="Intro.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <button id="enterButton">Find A Match</button>
-    </div>
+    </div> -->
 
     <div id="mainContent">
         <audio id="backgroundMusic" loop>
@@ -32,8 +32,19 @@
         <!-- Your main website content goes here -->
 
 
-        
-        <!-- More content -->
+        <button id="gameButton">$COC MENU</button>
+
+        <!-- Pop-up menu (initially hidden) -->
+        <div id="popupMenu" class="hidden">
+            <!-- Pop-up menu content -->
+            <h2>$COC ON SOL</h2>
+            <ul>
+                <li><a href="#">Buy $COC</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Telegram</a></li>
+                <li><a href="#">Chart</a></li>
+            </ul>
+        </div>
     </div>
     
 

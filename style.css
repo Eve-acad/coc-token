@@ -62,10 +62,10 @@ body, html {
 #enterButton {
     font-family: 'Luckiest Guy', cursive;
     text-shadow:
-        -1.5px -1.5px 0 #000,
-        1.5px -1.5px 0 #000,
-        -1.5px 1.5px 0 #000,
-        1.5px 1.5px 0 #000; /* creates an outline effect */
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000; /* creates an outline effect */
     padding: 20px 20px;
     background: #F89406; /* Orange background */
     color: white;
@@ -77,14 +77,109 @@ body, html {
     transform: translate(-50%, -50%);
     z-index: 3;
     border-radius: 5px;
-    border: 2px solid white; /* Adds a 2px solid white border */
+    border: 3.5px solid black; /* Outer black border */
+    box-shadow:
+        0 0 0 1.25px white, /* Middle white border */
+        0 0 0 5px black; /* Inner black border */
 }
+
 #enterButton:hover {
     background: #f3ad34; /* Lighter orange on hover */
 }
 
 
 #mainContent {
-    display: none;
+    /* display: none; */
     /* Additional styling for your main content */
 }
+
+#gameButton {
+    font-family: 'Luckiest Guy', cursive; /* Keeping the font consistent with the other button */
+    text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000; /* This creates an outline effect */
+    padding: 10px 20px;
+    background: #FFC600; /* A gold color, similar to in-game buttons */
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px; /* Positioning from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    border: 2px solid black; /* Outer black border */
+    border-radius: 5px; /* Slight rounding on the edges */
+    box-shadow: 0 2px #999; /* Gives a slight 3D effect */
+    z-index: 3;
+}
+
+#gameButton:hover {
+    background: #FFD700; /* Slightly lighter gold on hover */
+    box-shadow: 0 1px #666; /* Adjust shadow for 3D press effect */
+    transform: translate(-50%, 1px); /* Moves the button down a pixel to simulate a press */
+}
+
+#popupMenu {
+    font-family: 'Luckiest Guy', cursive;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background: #e8e8e0;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.322);
+    margin-bottom: 10px;
+    padding: 20px;
+    z-index: 4;
+    display: none; /* Change this to flex to use flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align children horizontally */
+    justify-content: center; /* Center-align children vertically (if you have specific height) */
+}
+
+#popupMenu h2 {
+    margin-top: 0;
+    text-align: center; /* Center-align the text of the heading */
+}
+
+#popupMenu ul {
+    list-style: none;
+    padding: 0;
+    width: 100%; /* Full width of the popupMenu */
+    text-align: center; /* Text align for list items if not using flexbox for them */
+}
+
+#popupMenu ul li {
+    display: flex; /* Makes each list item a flex container */
+    justify-content: center; /* Centers the links within the list items */
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+}
+
+#popupMenu ul li::after {
+    content: ''; /* Required property for pseudo-elements */
+    position: absolute;
+    bottom: 0; /* Align with the bottom of the list item */
+    left: 50%; /* Start at the middle of the list item */
+    transform: translateX(-50%); /* Center the line */
+    width: 30%; /* Adjust to your preference for border length */
+    height: 1px;
+    background-color: #969696; /* Color of the bottom border */
+}
+
+
+#popupMenu ul li a {
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.15s ease; /* Smooth transition for scale */
+    /* If your anchor elements are inline or inline-block, they will inherit the center alignment */
+}
+
+#popupMenu ul li a:hover {
+    transform: scale(1.1); /* Enlarge text by 10% on hover */
+}
+
