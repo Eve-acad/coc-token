@@ -89,7 +89,7 @@ body, html {
 
 
 #mainContent {
-    /* display: none; */
+    display: none;
     /* Additional styling for your main content */
 }
 
